@@ -1,0 +1,70 @@
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        font-family: inherit;
+        color: inherit;
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .9);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display:block;
+        transition: all .3s;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-tertiary;
+
+            &:invalid {
+                border-bottom: 3px solid $color-secondary;
+            }
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+
+    &__input:placeholder-shown + &__label:not(&__label--textarea)  {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 1.5rem;
+        margin-top: .7rem;
+        display: block;
+        color: $color-white;
+        transition: all .3s;
+    }
+
+    &__submit {
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+
+        cursor: pointer;
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        transition: all 0.2s;
+        color: $color-grey-dark;
+        border: 1px solid rgba($color-grey-dark, .5);
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-primary-dark;
+        }
+    }
+}

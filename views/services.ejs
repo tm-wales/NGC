@@ -1,0 +1,51 @@
+<% include ./partials/header %>
+
+    <title><%= selectedService.serviceName %> | Natural Groundcare | Nurture Landscapes</title>
+    <meta name="description" content="<%= selectedService.LandingText %>">
+    <meta name="keywords" content="<%= selectedService.serviceName %>">
+</head>
+
+<body>
+    <% include ./partials/nav %>
+
+    <main>
+        <div class="service-page__header u-container js--wp-1">
+            <div class="service-page__header__title">
+                <%= selectedService.serviceName %>
+            </div>
+            <div class="service-page__header__button">
+                <a href="#contact-us" class="service-page__header__link">Request Quote</a>
+            </div>
+        </div>
+        <div class="service-page__container u-container">
+            <div class="service-page__details">
+                <% if(selectedService.contentList != undefined) { %>
+                    <% selectedService.contentList.forEach(function(content) { %>
+                    <div class="service-page__details__section">
+                        <% if(content.type == "image") { %>
+                            <img class="service-page__image" src=" <%= content.content %> " alt=" <%= content.name %>">
+                        <% } %>
+                        <% if(content.type == "video") { %>
+                            <video class="service-page__video" src="<%= content.content %>" playsinline  autoplay></video>
+                        <% } %>
+                        <% if(content.type == "text") { %>
+                            <p class="service-page__text"> <%- content.content %> </p>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                <% } %>
+            </div>
+            <ul class="service-page__links">
+                <% allServices.forEach(function(service) { %>
+                    <li class="service-page__links__item" style="background-image: url('<%= service.landingImage %>')">
+                        <a href="/services/<%= service.serviceName.replace(' ','-') %>" class="service-page__links__item__link">
+                            <p><%= service.serviceName %></p>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    </main>
+
+    <% include ./partials/footer %>
+</body>

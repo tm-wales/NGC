@@ -1,0 +1,32 @@
+.u-container {
+    max-width: 177rem;
+    margin: 0 auto;
+
+    &--mid {
+        max-width: 140rem;
+        margin: 0 auto;
+    }
+
+    &--small {
+        max-width: 98rem;
+        margin: 0 auto;
+    }
+}
+
+.u-flex-container {
+    display: flex;
+    justify-content: flex-start;
+
+    &--right {
+        justify-content: flex-end;
+    }
+}
+
+.u-relative {
+    position: relative;
+}
+
+.u-max {
+    width: 100%;
+    height: 100%;
+}

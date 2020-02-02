@@ -1,0 +1,104 @@
+<% include ./partials/header %>
+
+<title>Natural Groundcare | Japanese Knotweed | Landscaping | Natural Groundcare</title>
+<meta name="description" content="Combining a commercial level of service in the domestic market with the best services in landscaping and ground control">
+<meta name="keywords" content="Japanese Knotweed,Landscaping">
+</head>
+
+<body >
+    <div id="fouc" class="page js--wp-1">
+        <% include ./partials/loading %>
+        <% include ./partials/nav %>
+        <header class="header">
+            <div class="header__jumbotron">
+                <div class="u-container u-relative u-max">
+                    <div class="header__textbox">
+                        <h1 class="heading-primary header__text">
+                            Landscaping, Weed Control & Tree Surgery
+                        </h1>
+                        <div class="header__sub-text">
+                            Combining a commercial level of service in the domestic market with the best services in landscaping and ground control
+                        </div>
+                    </div>
+                    <img class="header__image" src="/resources/img/nllogo-white.png" alt="header image">
+                </div>
+            </div>
+            <section id="section--about" class="section">
+                <div class="heading-secondary">Who we are</div>
+                <div class="header__about u-container--mid">
+                    <div class="header__about__images">
+                        <img class="header__about__images--1" src="/resources/img/nlwho1.jpg" alt="about image 1">
+                        <img class="header__about__images--2" src="/resources/img/nlwho2.jpg" alt="about image 2">
+                    </div>
+                    <div class="header__about__quote">
+                        <div class="quote__text">
+                            Specialists in landscaping, grown from strong roots
+                        </div>
+                        <div class="quote__owner">
+                            <b>Natural Groundcare</b>
+                        </div>
+                    </div>
+                    <div class="header__about__details">
+                        Natural Groundcare Ltd is a dynamic, expanding Company which specialises in Commercial and Domestic Grounds Maintenance, Landscape Management and Conservation Works. </br></br>
+
+                        We work on sites for a wide range of Customers across South Wales and the South West.</br></br>
+
+                        From start to finish we can help you design and build your dream garden. Providing a professional and efficient service you will be relaxing in your garden in no time. Just so you can relax some more we will even maintain it for you also.
+                    </div>
+                </div>
+                <div class="u-flex-container u-container--mid">
+                    <div class="section__image section__image--alt"></div>
+                </div>
+            </section>
+        </header>
+
+        <main>
+            <section id="section-services" class="section section--alt">
+                <div class="heading-secondary heading-secondary--alt">Services</div>
+                <div class="u-container--mid">
+                    <div class="card--service__grid">
+                        <% services.forEach(function(service) { %>
+                            <a href="/services/<%= service.serviceName.replace(' ','-') %>" class="card--service">
+                                <div class="card--service__image" style="background-image: url('<%= service.landingImage %>')"></div>
+                                <div class="card--service__link"><%= service.serviceName %></div>
+                                <div class="card--service__text"><%= service.landingText %></div>
+                            </a>
+                        <% }) %>
+                        </div>
+                </div>
+                <div class="u-flex-container u-flex-container--right u-container--mid">
+                    <div class="section__image"></div>
+                </div>
+            </section>
+
+            <section id="section--cases" class="section">
+                <div class="heading-secondary"><a href="/cases/">Case Studies <ion-icon name="arrow-dropright"></ion-icon></a></div>
+                <div class="u-container--mid">
+                    <div class="card--case__grid">
+                        <% cases.forEach(function(caseStudy) { %>
+                            <a href="/cases/<%= caseStudy.caseName.replace(/ /g,'-') %>" class="card--case">
+                                <div class="card--case__image" style="background-image: url('<%= caseStudy.mainImage %>')"></div>
+                                <div class="card--case__textbox">
+                                    <div class="card--case__title"><%= caseStudy.caseName %></div>
+                                    <div class="card--case__sector"><%= caseStudy.sector %></div>
+                                </div>
+                            </a>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="u-flex-container u-container--mid">
+                    <div class="section__image section__image--alt"></div>
+                </div>
+            </section>
+
+            <section id="section--news" class="section section--alt">
+                <div class="heading-secondary heading-secondary--alt"><a href="/news/">News <ion-icon name="arrow-dropright"></ion-icon></a></div>
+                    <% include ./partials/news %>
+                <div class="u-flex-container u-flex-container--right u-container--mid">
+                    <div class="section__image section__image--black"></div>
+                </div>
+            </section>
+        </main>
+        <% include ./partials/footer %>
+    </div>
+</body>

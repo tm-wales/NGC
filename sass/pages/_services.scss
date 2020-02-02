@@ -1,0 +1,167 @@
+.service-page {
+    &__header {
+        width: 100%;
+        background-color: rgba($color-grey-light, .2);
+        padding: 10rem;
+        height: 20rem;
+        
+        &__title {
+            display: inline-block;
+            font-size: 4rem;
+        }
+
+        &__button {
+            float: right;
+            margin-top: 2.5rem;
+        
+            @include respond-stage5 {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &__link {
+            &:link,
+            &:visited {
+                padding: 1rem 1.5rem;
+                font-size: 1.6rem;
+                width: 50%;
+                font-weight: 500;
+                text-decoration: none;
+                color: $color-grey-dark;
+                font-size: 2rem;
+                border: 2px solid $color-grey-dark;
+                margin-bottom: 3rem;
+                transition: .3s;
+                border-radius: 1rem;
+            }
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-secondary-dark;
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+        padding: 0 10rem;
+
+        @include respond-stage3-1 {
+            padding: 0 5rem;
+        }
+    }
+
+    &__details {
+        display:inline-block;
+        width: 69%;
+        min-height: 70rem;
+        overflow: hidden;
+
+        @include respond-stage3-1 {
+            display:inline-block;
+            float: none;
+
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        &__section {
+            padding: 3rem;
+
+            & p {
+                padding: 1rem 0;
+            }
+
+            & ul {
+                padding: 1rem;
+                 & li {
+                    margin-left: 2rem;
+                    list-style-type: circle;
+                 }
+            }
+        }
+    }
+
+    &__links {
+        height: 100%;
+        float:right;
+        margin-top: 5rem;
+        width: 28%;
+        
+        @include respond-stage3-1 {
+            display:block;
+            float: none;
+
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        &__item {
+            height: 10rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            transition: all .2s;
+            border: 3px solid $color-white;
+            margin: 0 2rem;
+
+            @include respond-stage3-1 {
+                display:inline-block;
+                float: none;
+                height: 8rem;
+                width: 22rem;
+                margin: 0 auto;
+            }
+            
+            @include respond-stage5 {
+                width: 100%;
+            }
+
+            &__link {
+                display:block;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                text-decoration: none;
+
+                &:link p,
+                &:visited p {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: inline-block;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    width: 60%;
+                    padding: .5rem 2rem;
+                    color: $color-white;
+                    text-decoration: none;
+                    text-align: left;
+                    background-image: linear-gradient(120deg, rgba($color-tertiary, .9) 0%, rgba($color-tertiary, .9) 50%, $color-secondary 50%);
+                    background-size: 230%;
+                    transition: all .6s;
+                }
+        
+                &:hover p {
+                    background-position: 100%;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__video {
+        width: 100%;
+        height: auto;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+    <title>Case Studies | Nurtured Landscapes | Nurture Landscapes</title>
+    <meta name="description" content="Full list of all case studies by Nurtured Landscapes">
+</head>
+
+<body>
+    <% include ../partials/nav %>
+
+    <main>
+        <div class="case-page__header case-page__header--gap u-container js--wp-1">
+            <div class="case-page__header__title">
+                Explore our Case Studies
+            </div>
+            <div class="case-page__header__button">
+                <a href="#contact-us" class="service-page__header__link">Request Quote</a>
+            </div>
+        </div>
+
+        <div class="u-container--mid case-page__container">
+            <div class="case-page__filters">
+                <select class="case-page__filters case-page__filters--service">
+                    <option value = "All">All</option>
+                    <% services.forEach(function(service) { %>
+                        <option value = "<%= service._id %>"><%= service.serviceName %></option>
+                    <% }) %>
+                </select>
+
+                <select class="case-page__filters case-page__filters--sector">
+                    <option value = "All">All</option>
+                    <option value = "Commercial">Commercial</option>
+                    <option value = "Residential">Residential</option>
+                </select>
+            </div>
+            <div class="case-page__cases">
+                <% include ./api/cases %>
+            </div>
+        </div>
+    </main>
+
+    <% include ../partials/footer %>
+</body>

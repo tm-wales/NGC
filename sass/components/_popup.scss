@@ -1,0 +1,154 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+
+    &__show--js {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__header {
+        margin-top: 0rem;
+    }
+
+    &__box {
+        @include absolute-center;
+        background: $color-white;
+        box-shadow: 0 2rem 4rem $color-shadow;
+        width: 90%;
+        max-width: 130rem;
+        height: 50rem;
+        border-radius: 3px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+        transition: all .5s .2s;
+
+        @include respond-stage4 {
+            top: 50%;
+            left: 50%;
+            height: 90%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    &__show--js .popup__box {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    &__grid {
+        display:inline-block;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 1fr;
+        grid-template-areas: "l r"
+                             "l t";
+        height: 100%;
+        width: 100%;
+
+        @include respond-stage4 {
+            grid-template-columns: 1fr;
+            grid-template-rows: 3fr 5fr;
+            grid-template-areas: "r"
+                                 "l";
+        }
+    }
+
+    &__close {
+        color: $color-grey-dark;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        font-size: 3rem;
+        text-decoration: none;
+        display:inline-block;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+
+    &__content {
+        padding: 4rem;
+        position: relative;
+
+        @include respond-stage4 {
+            padding: 1rem;
+        }
+
+        &--left {
+            grid-area: l;
+            background-image: linear-gradient(rgba($color-black,0.2), rgba($color-white,0.2)), url('../img/perfect-grass.jpg');
+            background-color: rgba($color-white,0.8);
+            background-size: cover;
+            background-position: center;
+
+            & .heading-tertiary {
+                color: $color-white;
+            }
+        }
+
+        &--right {
+            grid-area: r;
+        }
+
+        &__contact {
+            display: block;
+            color: $color-primary;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 2rem;
+            transition: all 0.5s;
+            border-radius: 100px;
+
+            @include respond-stage4 {
+                margin-top: 1rem;
+            }
+
+            &--tel {
+                font-size: 2rem;
+                display: inline-block;
+                text-align: center;
+                width: 46%;
+                margin: 0 1%;
+                @include respond-stage3-2 {
+                    font-size: 1.6rem;
+                }
+            }
+
+            &--email {
+                font-size: 1.8rem;
+
+                @include respond-stage3-2 {
+                    font-size: 1.3rem;
+                }
+            }
+
+
+            &:hover {
+                color: $color-white;
+                background-color: $color-primary;
+            }
+        }
+
+        &__text {
+            grid-area: t;
+            font-size: 1.2rem;
+            align-self: end;
+
+            @include respond-stage4 {
+                display:none;
+            }
+        }
+    }
+
+}

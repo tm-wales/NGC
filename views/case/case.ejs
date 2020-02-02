@@ -1,0 +1,65 @@
+<% include ../partials/header %>
+
+    <title><%= selectedCase.caseName %> | Nurtured Landscapes | Nurture Landscapes</title>
+    <meta name="keywords" content="<%= selectedCase.caseName %>">
+</head>
+
+<body>
+    <% include ../partials/nav %>
+
+    <main>
+        <div class="case-page__mainImage js--wp-1" style="background-image: url('<%= selectedCase.mainImage %>')"></div>
+        <div class="case-page__header u-container">
+            <div class="case-page__header__title">
+                <%= selectedCase.caseName %>
+                <div>
+                    <% var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"); %>
+                    <% var caseDate = selectedCase.createDate.getDate() + '-' + (m_names[selectedCase.createDate.getMonth()]) + '-' + selectedCase.createDate.getFullYear() %>
+
+                    <div class="case-page__header__sector"><%= selectedCase.sector %></div>
+                    <ul class="case-page__header__service">
+                        <% if(selectedCase.service != undefined) { %>
+                            <% selectedCase.service.forEach(function(serv) { %>
+                        <li> <a href="/services/<%= serv.serviceName.replace(/ /g,'-') %>"><%= serv.serviceName %> </a></li>
+                            <% }) %>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+            <div class="case-page__header__button">
+                <a href="/cases" class="case-page__header__link">View All</a>
+            </div>
+        </div>
+        <div class="case-page__container u-container">
+            <ul class="case-page__keyDetails">
+                <% if(selectedCase.keyFacts != undefined) { %>
+                    <% selectedCase.keyFacts.forEach(function(fact) { %>
+                <li> <%= fact %> </li>
+                    <% }) %>
+                <% } %>
+            </ul>
+            <div class="case-page__shortDescription">
+                <%= selectedCase.shortDescription %>
+            </div>
+            <div class="case-page__details u-container--mid">
+                <% if(selectedCase.caseContent != undefined) { %>
+                    <% selectedCase.caseContent.forEach(function(content) { %>
+                    <div class="case-page__details__section">
+                        <% if(content.type == "image") { %>
+                            <img class="case-page__image" src=" <%= content.content %> " alt=" <%= content.name %>">
+                        <% } %>
+                        <% if(content.type == "video") { %>
+                            <video class="case-page__video" src="<%= content.content %>" playsinline  autoplay></video>
+                        <% } %>
+                        <% if(content.type == "text") { %>
+                            <p class="case-page__text"> <%- content.content %> </p>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <% include ../partials/footer %>
+</body>

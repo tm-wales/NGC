@@ -1,0 +1,35 @@
+{
+  "name": "nurtured-landscapes",
+  "version": "0.1.0",
+  "description": "Nurtured Landscapes Website",
+  "main": "app.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss public/resources/css/style.css -w"
+  },
+  "keywords": [
+    "Keywords"
+  ],
+  "author": "Techmeleon",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.1",
+    "ejs": "^2.5.8",
+    "ejs-lint": "^0.3.0",
+    "express": "^4.16.3",
+    "express-back": "0.0.2",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.12",
+    "morgan": "^1.9.1",
+    "nodemailer": "^4.6.4",
+    "npm": "^5.8.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.0",
+    "winston": "^2.4.1"
+  }
+}

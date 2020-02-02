@@ -1,0 +1,14 @@
+    <% news.forEach(function(newsItem) { %>
+        <div id="<%= newsItem.title.replace(/ /g, '-') %>" class="news-page__grid">
+            <div class="news-page__card">
+                <div class="news-page__card__image" style="background-image: url('<%= newsItem.mainImageUrl %>')"></div>
+                <div class="news-page__card__details">
+                    <div class="news-page__card__title"><%- newsItem.title %></div>
+                    <div class="news-page__card__date"><%= newsItem.createDate %></div>
+                    <div class="news-page__card__poster"><%= newsItem.poster.username %></div>
+                    <div class="news-page__card__short"><%- newsItem.shortDescription %></div>
+                    <!-- <a class="news-page__card__link btn-text" href="/news/<%= newsItem.title.replace(/ /g, '-') %>">Read more</a> -->
+                </div>
+            </div>
+        </div>
+    <% }) %>

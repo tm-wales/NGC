@@ -1,0 +1,58 @@
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin nav-position {
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+}
+
+/* Media query manager
+
+    1600 - infinite
+*/
+// --------------------------
+@mixin respond-stage1 {
+    @media (max-width: 2400px) { @content };
+}
+
+@mixin respond-stage2 {
+    @media (max-width: 1850px) { @content };
+}
+
+@mixin respond-stage3 {
+    @media (max-width: 1300px) { @content };
+}
+
+@mixin respond-stage3-1 {
+    @media (max-width: 1000px) { @content };
+}
+
+@mixin respond-stage3-2 {
+    @media (max-width: 860px) { @content };
+}
+
+@mixin respond-stage4 {
+    @media (max-width: 740px) { @content };
+}
+
+@mixin respond-stage5 {
+    @media (max-width: 580px) { @content };
+}
+
+@mixin respond-stage6 {
+    @media (max-width: 460px) { @content };
+}
+
+@mixin respond-stage7 {
+    @media (max-width: 380px) { @content };
+}
+
+@mixin respond-stage8 {
+    @media (max-width: 330px) { @content };
+}
+// --------------------------

@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+    <title><%= selectedNews.title %> | Nurtured Landscapes | Nurture Landscapes</title>
+    <meta name="keywords" content="<%= selectedNews.caseName %>">
+</head>
+
+<body>
+    <% include ../partials/nav %>
+
+    <main>
+        <div class="news-page__mainImage js--wp-1" style="background-image: url('<%= selectedNews.mainImage %>')"></div>
+        <div class="news-page__header u-container news-page__header--alt">
+            <div class="news-page__header__title">
+                <%= selectedNews.title %>
+                <div>
+                    <% var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"); %>
+                    <% var caseDate = selectedNews.createDate.getDate() + '-' + (m_names[selectedNews.createDate.getMonth()]) + '-' + selectedNews.createDate.getFullYear() %>
+
+                    <div class="news-page__header__category"><%= selectedNews.category %></div>
+                </div>
+            </div>
+            <div class="news-page__header__button news-page__header__button--alt">
+                <a href="/news" class="news-page__header__link">View All</a>
+            </div>
+        </div>
+        <div class="news-page__container u-container">
+            <div class="news-page__mainbox u-container--mid">
+                <div class="news-page__mainImage">
+                    <img src="<%= selectedNews.mainImageUrl %>" alt ="<%=selectedNews.title %>">
+                </div>
+                <div class="news-page__card__date"><%= selectedNews.createDate %></div>
+                <div class="news-page__shortDescription">
+                    <%= selectedNews.shortDescription %>
+                </div>
+            </div>
+            <div class="news-page__details u-container--mid">
+                <% if(selectedNews.contentList != undefined) { %>
+                    <% selectedNews.contentList.forEach(function(content) { %>
+                    <div class="news-page__details__section">
+                        <% if(content.type == "image") { %>
+                            <img class="news-page__image" src=" <%= content.content %> " alt=" <%= content.name %>">
+                        <% } %>
+                        <% if(content.type == "video") { %>
+                            <video class="news-page__video" src="<%= content.content %>" playsinline  autoplay></video>
+                        <% } %>
+                        <% if(content.type == "text") { %>
+                            <p class="news-page__text"> <%- content.content %> </p>
+                        <% } %>
+                    </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <% include ../partials/footer %>
+</body>

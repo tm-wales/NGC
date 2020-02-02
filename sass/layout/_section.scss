@@ -1,0 +1,35 @@
+.section {
+    padding: 0 3rem;
+    padding-top: 5rem;
+
+    &__image {
+        position: relative;
+        height: 15rem;
+        width: 15rem;
+        bottom: -1.1rem;
+        margin-top: 2rem;
+        background-image: url("/resources/img/nllogo-alt.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &--alt {
+            background-image: url("/resources/img/nllogo.png");
+        }
+
+        &--black {
+            background-image: url("/resources/img/nllogo-black.png");
+        }
+    }
+
+    &--alt {
+        background-color: $color-background-dark;
+        background-image: linear-gradient(135deg, rgba($color-background-dark,.9), rgba($color-background-dark,.9)), url('/resources/img/hero-background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    &--cases__icon {
+        font-size: .8em;
+    }
+}

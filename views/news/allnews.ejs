@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+    <title>News | Nurtured Landscapes | Nurture Landscapes</title>
+    <meta name="description" content="News by Nurtured Landscapes">
+</head>
+
+<body>
+    <% include ../partials/nav %>
+
+    <main>
+        <div class="news-page__header u-container js--wp-1 news-page__header--gap">
+            <div class="news-page__header__title">
+                News
+            </div>
+            <div class="news-page__header__button">
+                <a href="#contact-us" class="news-page__header__link">Request Quote</a>
+            </div>
+        </div>
+
+        <div class="u-container--mid news-page__container">
+            <div class="news-page__filters">
+                <div class="news-page__filters__title">Categories</div>
+                <ul class="news-page__filters--category">
+                    <li alt="All">All</li>
+                    <% newsCategory.forEach(function(category) { %>
+                        <li alt="<%= category %>"><%= category %></li>
+                    <% }) %>
+                </ul>
+            </div>
+
+            <div class="news-page__news">
+                <% include ./api/news %>
+            </div>
+        </div>
+    </main>
+
+    <% include ../partials/footer %>
+</body>

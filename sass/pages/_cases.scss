@@ -1,0 +1,166 @@
+.case-page {
+    &__header {
+        width: 100%;
+        background-color: rgba($color-grey-light, .2);
+        padding: 2rem 10rem;
+
+        height: 16rem;
+
+        @include respond-stage5 {
+            height: 20rem;
+            padding: 2rem;
+        }
+
+        &--gap {
+            padding: 10rem;
+        }
+
+        &__title {
+            display: inline-block;
+            font-size: 4rem;
+            @include respond-stage5 {
+                font-size: 3.5rem;
+            }
+        }
+
+        &__sector {
+            display: inline-block;
+            font-size: 2rem;
+            border-top: 2px solid $color-tertiary;
+            padding-top: 1rem;
+        }
+
+        &__service {
+            display:inline-block;
+            font-size: 2rem;
+            & li {
+                &::before {
+                    content: " / ";
+                    color: rgba($color-grey-dark,.4);
+                    padding: .5rem;
+                }
+
+                display:inline-block;
+
+                & a {
+                    color: $color-secondary;
+                    text-decoration: none;
+                    &:hover {
+                        color: $color-tertiary;
+                    }
+                }
+            }
+        }
+
+        &__button {
+            float: right;
+            margin-top: 2.5rem;
+            margin-right: 1rem;
+
+            @include respond-stage3-2 {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &__link {
+            &:link,
+            &:visited {
+                padding: 1rem 1.5rem;
+                font-size: 1.6rem;
+                width: 50%;
+                font-weight: 500;
+                text-decoration: none;
+                color: $color-grey-dark;
+                font-size: 2rem;
+                border: 2px solid $color-grey-dark;
+                margin-bottom: 3rem;
+                transition: .3s;
+                border-radius: 1rem;
+            }
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-secondary-dark;
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+        padding: 5rem 10rem;
+
+        @include respond-stage5 {
+            padding: 2.5rem 5rem;
+        }
+    }
+
+    &__filters {
+        padding: 2rem 0;
+        margin-top: 1rem;
+
+        &--service,
+        &--sector {
+            display: inline-block;
+            width: 14rem;
+            height: 4rem;
+            font-size: 1.4rem;
+            margin-right: 1rem;
+            padding: .5rem 1rem;
+            border: 1px solid $color-grey-dark;
+
+            @include respond-stage5 {
+                width: 100%;
+            }
+        }
+    }
+
+    &__shortDescription {
+        text-align: center;
+        margin-top: 2rem;
+        &::after {
+            content: " ";
+            display: block;
+            height: 2px;
+            background: $color-grey-light;
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 3rem;
+        }
+    }
+
+    &__keyDetails {
+        text-align: center;
+        & li {
+            font-size: 2rem;
+            display:inline-block;
+            text-indent: -.7rem;
+            &:not(:last-child) {
+                margin-right: 3rem;
+            }
+
+            &::before {
+                content: "•";
+                color: $color-tertiary; /* or whatever color you prefer */
+            }
+        }
+    }
+
+    &__mainImage {
+        height:40vh;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__details {
+        margin-top:  5rem;
+        padding-top: 2rem;
+        -webkit-columns: 30rem 3;
+        columns: 320px 3;
+    }
+}

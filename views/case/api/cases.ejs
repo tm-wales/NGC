@@ -1,0 +1,19 @@
+    <% count = 1 %>
+    <% cases.forEach(function(caseStudy) { %>
+        <% if(count % 6 === 1) { %>
+    <div class="card--case__grid">
+        <% } %>
+        <a href="/cases/<%= caseStudy.caseName.replace(/ /g,"-") %>" class="card--case">
+            <div class="card--case__image" style="background-image: url('<%= caseStudy.mainImage %>')">
+            </div>
+            <div class="card--case__textbox">
+                <div class="card--case__title"><%= caseStudy.caseName %></div>
+                <div class="card--case__sector"><%= caseStudy.sector %></div>
+            </div>
+        </a>
+        <% if(count % 6 === 0) { %>
+    </div>
+        <% } %>
+        <% count += 1 %>
+    <% }) %>
+</div>

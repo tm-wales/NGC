@@ -1,0 +1,98 @@
+
+.loading {
+    display:none;
+}
+.js--onLoad .loading {
+    display:block;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom right, $color-white, $color-grey-light);
+
+    &__title {
+        font-size: 3rem;
+        position: absolute;
+        top: 35%;
+        LEFT: 50%;
+        transform: translateX(-50%);
+
+        &--nurtured {
+            color: $color-secondary;
+        }
+
+        &--landscapes {
+            color: $color-tertiary;
+        }
+    }
+
+    &__message {
+        position: absolute;
+        top: 40%;
+        LEFT: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__img {
+        border-radius:100%;
+        position:absolute;
+        border: 1px solid $color-secondary;
+        animation: up 1s;
+        animation-iteration-count: infinite;
+        transition: 2s;
+        border-bottom:none;
+        border-right:none;
+        animation-timing-function:linear;
+        margin-left: -50px;
+        margin-top: -65px;
+    }
+
+    &__icon {
+        @keyframes up{
+            from{transform:rotate(0deg);}
+            50%{transform:rotate(180deg);}
+            100%{transform:rotate(360deg);}
+        }
+
+        & #loading__icon__img1 {
+            width:100px;
+            height:100px;
+            left:50%;
+            top:50%;
+        }
+
+        & #loading__icon__img2 {
+            width:90px;
+            height:90px;
+            left:50.35%;
+            top:50.7%;
+            animation-delay:.2s;
+        }
+
+        & #loading__icon__img3 {
+            width:80px;
+            height:80px;
+            left:50.70%;
+            top:51.4%;
+            animation-delay:.4s;
+        }
+
+        & #loading__icon__img4 {
+            width:70px;
+            height:70px;
+            left:51.05%;
+            top:52.1%;
+            animation-delay:.6s;
+        }
+
+        & #loading__icon__img5 {
+            width:60px;
+            height:60px;
+            left:51.40%;
+            top:52.8%;
+            animation-delay:.8s;
+        }
+    }
+}

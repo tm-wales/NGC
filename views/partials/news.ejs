@@ -1,0 +1,33 @@
+    <div class="news">
+        <div class="news__item--newsletter">
+            <p>Sign up for our newsletter and be the first to get the latest information from Natural Groundcare</p>
+            <form action="newsletter" method="POST">
+                <div class="label"><label>Sing up to our Newsletter</label></div>
+                <input type="email" name ="email" placeholder="email address" required>
+                <button>subscribe</button>
+            </form>
+        </div>
+        <ul class="social-links">
+            <li><a target="_blank" href="#" class="social-links__link"><i class="ion-social-twitter"></i></a></li>
+            <li><a target="_blank" href="#" class="social-links__link"><i class="ion-social-facebook"></i></a></li>
+        </ul>
+        <div class="news__inner">
+            <div class="news__grid">
+                <% let count = 0; %>
+                <% news.forEach(function(newsItem) { %>
+                    <% if(count == 0) { %>
+                        <a href="/news/#<%= newsItem.title.replace(/ /g, '-') %>" class="news__item" style="background-image: url('<%= newsItem.mainImageUrl %>')">
+                    <% } else { %>
+                        <a href="/news/#<%= newsItem.title.replace(/ /g, '-') %>" class="news__item" style="background-image: url('<%= newsItem.mainImageUrl %>')">
+                    <% } %>
+                            <div class="news__item__title"> <%- newsItem.title %> </div>
+                        </a>
+                    <% count += 1; %>
+                <% }) %>
+
+                <a href="https://www.lawnamental.co.uk" class="news__item news__item--lawn" style="background-image: url('/resources/img/lawnamental.png')">
+                    <div class="news__item__title">Need Lawn care?</div>
+                </a>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,45 @@
+<div id="contact-us" class="popup">
+    <div class="popup__box">
+        <div class="popup__grid">
+            <div class="popup__content popup__content--left">
+                <h2 class="heading-tertiary popup__header">Let's Talk</h2>
+                <form method="POST" action="/contact-us" class="form">
+                    <div class="form__group">
+                        <input type="text" class="form__input" name="name" id="name" placeholder="Name*" required>
+                        <label for="name" class="form__label">Name*</label>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" class="form__input" name="email" id="email" placeholder="Email*" required>
+                        <label for="email" class="form__label">Email*</label>
+                    </div>
+                    <div class="form__group">
+                        <input type="tel" class="form__input" name="phone" id="phone" placeholder="Contact Number">
+                        <label for="phone" class="form__label">Contact Number</label>
+                    </div>
+                    <div class="form__group">
+                        <textarea name="message" class="form__input" id="message">Hello!</textarea>
+                        <label for="message" class="form__label form__label--textarea">Message</label>
+                    </div>
+                    <button class="form__submit">Submit</button>
+                </form>
+            </div>
+            <div class="popup__content popup__content--right">
+                <h2 class="heading-tertiary popup__header">Come Direct</h2>
+                <div class="popup__close">&times;</div>
+                <a class="popup__content__contact popup__content__contact--tel" href="tel:01792851660">
+                    <i class="ion-ios-telephone"></i>
+                    01792 851 660
+                </a>
+                <a class="popup__content__contact popup__content__contact--tel" href="tel:07968791186">
+                    <i class="ion-ios-telephone"></i>
+                    07968 791 186
+                </a>
+                <a class="popup__content__contact popup__content__contact--email" href="mailto:info@naturalgroundcare.co.uk">
+                    <i class="ion-ios-email"></i>
+                    info@naturalgroundcare.co.uk
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

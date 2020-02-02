@@ -1,0 +1,232 @@
+ /* ----------------------------------------------- */
+/* Variable sets */
+/* ----------------------------------------------- */
+:root {
+    /* --color-pri: rgb(39, 174, 96); */
+    --color-pri: #cc0000;
+    --color-priDark: #a50202;
+    --color-background: white;
+    --color-backgroundAlt: rgb(235, 235, 235);
+    --color-backgroundDark: rgb(41, 41, 41);
+  }
+
+/* ----------------------------------------------- */
+/* Setup use only */
+/* ----------------------------------------------- */
+.tm-test {
+    border: black solid 1px;
+    background: greenyellow;
+    height: 50px;
+    width: 50px;
+}
+
+/* ----------------------------------------------- */
+/* General */
+/* ----------------------------------------------- */
+html,
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    background-color: var(--color-background);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('img/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    height: 100%;
+    min-height: 100%;
+}
+
+h2 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+h1 {
+    font-size: 400%;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+h3:after {
+    display: block;
+    height: 2px;
+    background-color: white;
+    content: " ";
+    width: 25%;
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 2em;
+    font-size: 70%;
+    max-width: 400px;
+}
+
+form input[type="email"] {
+    width:60%;
+    padding: 8px 12px 8px 12px;
+}
+
+form .label {
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+
+li {
+    list-style: none;
+    margin: 0.1em 0.3em;
+    display: inline-flex
+}
+
+a {
+    color: white;
+    outline: none;
+    text-decoration: none;
+    padding-bottom: 1em;
+}
+
+#site {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em;
+    grid-template-areas: ". ."
+                         "title title"
+                         "social companies";
+    height: 100%;
+}
+
+.title {
+    grid-area: title;
+    height: 50%;
+    text-align: left;
+}
+
+.title img {
+    height: 5em;
+    width: auto;
+}
+
+#social-media {
+    grid-area: social;
+    text-align: left;
+    align-self: end;
+}
+
+#companies {
+    grid-area: companies;
+    font-size: 80%;
+    text-align: right;
+    align-self: end;
+}
+
+#companies a:hover {
+    border-bottom: solid white 1px;
+}
+
+#companies img {
+    height: 1.3em;
+    width: auto;
+    vertical-align: bottom;
+}
+
+button {
+    background-color: #ee6352;
+    color: white;
+}
+@media screen and (max-width: 1110px) {
+    .title img {
+        height: 4em;
+    }
+    #site {
+        grid-template-areas: "social social"
+        "title title"
+        "companies companies"
+    }
+    #companies {
+        text-align: left;
+    }
+    #social-media {
+        align-self: start;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .title img {
+        height: 3em;
+    }
+    h3 {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    html,
+    body {
+        font-size: 18px;
+    }
+    .middle {
+        padding: 0 2em;
+    }
+    .title img {
+        height: 2.8em;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .title img {
+        height: 2.5em;
+    }
+    h1 {
+        font-size: 250%
+    }
+    h2 {
+        font-size: 90%
+    }
+    #site {
+        padding: 1em;
+        justify-items: center;
+    }
+    .title {
+        text-align: center;
+    }
+    #companies {
+        text-align: center;
+        font-size: 70%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .title img {
+        height: 2.3em;
+    }
+    h3 {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .title img {
+        height: 2em;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    h1 {
+        font-size: 220%
+    }
+    h2 {
+        font-size: 90%
+    }
+    h3 {
+        font-size: 70%;
+    }
+    .title img {
+        height: 1.5em;
+    }
+}
